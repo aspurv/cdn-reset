@@ -1,6 +1,157 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: 0;
+/* ==========================================================
+   CSS RESET
+   ========================================================== */
+
+/* 1. Box model predecible */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Quitar márgenes por defecto */
+* {
+  margin: 0;
+}
+
+/* 3. Base del documento */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 4. Media: responsive por defecto */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Formularios: heredar tipografía */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button,
+[type="button"],
+[type="submit"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* 6. Evitar desbordamiento de texto */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* 7. Listas: quitar estilos solo si tienen rol de lista semántica */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+/* 8. Enlaces */
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+a:not([class]) {
+  text-decoration: underline;
+}
+
+/* 9. Tablas */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 10. Otros elementos */
+hr {
+  border: none;
+  border-top: 1px solid currentColor;
+  height: 0;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+summary {
+  cursor: pointer;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* 11. Contexto de apilamiento para frameworks (React, Next, etc.) */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* 12. Accesibilidad: foco visible solo con teclado */
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* 13. Respetar preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
